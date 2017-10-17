@@ -4,3 +4,15 @@ rubyray:
   name: RubyRay
   email: rubyray@example.com
   password_digest: <%= User.digest('password') %>
+
+archer:
+  name: archer
+  email: archer@example.com
+  password_digest: <%= User.digest('password') %>
+
+<% 50.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@email.com" %>
+  password_digest: <% User.digest('password') %>
+<% end %>
